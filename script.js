@@ -11,12 +11,12 @@ const userInputHTML = document.getElementById("userInput");
 const formSubmit = document.getElementById("submit");
 const myLibrary = [];
 
-function Book(title, author, rating, pages, yesno) {
+function Book(title, author, rating, pages, read) {
     this.title = title;
     this.author = author;
     this.rating = rating;
     this.pages = pages;
-    this.yesno = yesno;
+    this.read = read;
     }
     
 //get user input
@@ -25,10 +25,25 @@ const userValues = document.getElementById("submitBtn").onclick = () => {
     let author = document.getElementById("bookAuthor").value;
     let rating = document.getElementById("bookRating").value;
     let pages = document.getElementById("bookPages").value;
-    let yesno = document.getElementsByName("yesno").value;
-    console.log(title + author + rating + pages + yesno);
+
+    let read = true;
+    const radios = document.getElementsByName("yesno");
+    for (const radio of radios) {
+        if (radio.checked) {
+            read = radio.value === "Yes"; 
+            break;
+        }
+    }
+    if (read === true) {
+        read = "Yes, read";
+    }
+    else {
+        read = "No, have not read."
+    }
+
+    console.log(title + author + rating + pages + read);
     
-    const userBook = new Book(title, author, rating, pages, yesno);
+    const userBook = new Book(title, author, rating, pages, read);
     myLibrary.push(userBook);
     console.log(myLibrary);
     addBookToLibrary();
