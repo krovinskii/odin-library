@@ -138,22 +138,3 @@ header {
     margin-bottom: 1rem; 
 }
 /*---------------------User Grid----------------*/
-.gridContainer {
-    height: 45%;
-    width: 100%;
-    padding: 1rem 3rem;
-    background: #d3e1fc;
-}
-.userBookContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2rem repeat(8, 1fr);
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;
-    background: #feffff;
-    gap: .5rem;
-}
-.gridTitle, .gridUser {
-    border: 1px solid black;
-}
