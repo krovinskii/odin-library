@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
@@ -27,11 +28,47 @@
         </div>
     </header>
     <div id="userInputContainer">
-        <input type="text">
-        <button class="userInputButton semi-bold-roboto">Add Book</button>
+        <input type="text" id="userInput">
+        <button class="userInputButton semi-bold-roboto open-modal" id="userInputBtn">Add Book</button>
+        <dialog id="userBookInput-dialog">
+            <form>
+                <div>
+                    <label for="title">Book Title</label>
+                    <input id="bookTitle" class="dialogInputs" type="text">
+                </div>
+                <div>
+                    <label for="author">Author</label>
+                    <input id="bookAuthor" class="dialogInputs" type="text">
+                </div>
+                <div>
+                    <label for="rating">Rating</label>
+                    <input id="bookRating" class="dialogInputs" type="number">
+                </div>
+                <div>
+                    <label for="pages">How many pages?</label>
+                    <input id="bookPages" class="dialogInputs" type="number">
+                </div>
+                <div>
+                    <label for="read">Did you read it?</label>
+                    <p>
+                        <input type="radio" name="yesno" checked>Yes</input>
+                    </p>
+                    <p>
+                        <input type="radio" name="yesno" checked>No</input>
+                    </p>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Add Book">
+                </div>
+                <p>All fields are required.</p>
+            </form>
+            <form method="dialog" class="dialogClose">
+                <button class="close">X</button>
+            </form>         
+        </dialog>
     </div>
     <div class="recommendContainer">
-        <div class="recommendText semi-bold-roboto">Recommended by</div>
+        <div class="recommendText semi-bold-roboto">Recommended by Krovinskii</div>
         <div class="cardContainer">
             <div class="card">
                 <img src="images/winfriends.jpg" class="cardImg">
@@ -106,5 +143,6 @@
             
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
