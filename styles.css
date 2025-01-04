@@ -138,3 +138,48 @@ header {
     margin-bottom: 1rem; 
 }
 /*---------------------User Grid----------------*/
+.userBookContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    background-color: #d3e1fc;
+}
+.userBookGrid {
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    grid-template-rows: 2rem repeat(10, 1fr);
+    row-gap: 1rem;
+    
+}
+.userInput, .gridHeader {
+    border: 1px solid black;
+    background-color: #feffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 1rem;
+    grid-column: span 2;
+}
+.title {
+    font-weight: 500;
+    color: rgb(22, 22, 22);
+}
+.author {
+    font-weight: 400;
+    font-size: .75rem;
+}
+.gridHeaderTitle {
+    grid-column: span 2;
+    padding-left: 1rem;
+}
