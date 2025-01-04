@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+}  
+.semi-bold-roboto {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+/*-----------------Header------------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem 1rem 3rem;
+    align-items: center;
+    height: 5vh;
+    width: 100%;
+    background-color: #feffff; 
+    position: relative;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+#headerLeftGroup {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+#headerNavContainer {
+    display: flex;
+    gap:1.5rem;
+    align-items: center;
+}
+#headerLibraryLogo {
+    height: 2.5rem;
+    width: auto;
+    position: relative;
+    bottom: .4rem;
+    margin-right: .5rem;
+}
+#headerLeftGroup h3 {
+    margin-right: 4rem;
+}
+#headerRightGroup {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+}
+#headerProfilePic {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    bottom: 0rem;
+}
+#logout {
+    height: 1.5;
+    width: auto;
+}
+/*-----------------------USER INPUT----------------------*/
+#userInputContainer {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: #d3e1fc;
+    
+}
+#userInputContainer input {
+    width: 40%;
+    height: 40%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 0;
+    background-color: #feffff;
+    border-radius: 5px;
+}
+#userInputContainer button {
+    width: 10%;
+    height: 40%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 0;
+    background-color: #feffff;
+    border-radius: 5px;
+}
+/*---------------------RECOMMENDED--------------*/
+.recommendContainer {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #d3e1fc;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+.cardContainer {
+    height: 87%;
+    width: 10%;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: #feffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 3px;
+}
+.card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+.cardImg {
+    height: 70%;
+    width: 70%;
+    object-fit: contain;
+}
+.card h4, .card h5, .card h6 {
+    text-wrap: wrap;
+    text-align: center;
+    margin-top: .4rem;
+}
+.recommendText {
+    width: 100%;  
+    padding-left: 3rem;  
+    margin-bottom: 1rem; 
+}
+/*---------------------User Grid----------------*/
+.gridContainer {
+    height: 45%;
+    width: 100%;
+    padding: 1rem 3rem;
+    background: #d3e1fc;
+}
+.userBookContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2rem repeat(8, 1fr);
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    background: #feffff;
+    gap: .5rem;
+}
+.gridTitle, .gridUser {
+    border: 1px solid black;
+}
