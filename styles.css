@@ -154,14 +154,17 @@ header {
     grid-template-rows: 2rem repeat(10, 1fr);
     row-gap: 1rem;
     
+    
 }
 .userInput, .gridHeader {
-    border: 1px solid black;
     background-color: #feffff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
+}
+.gridHeader {
+    color:#8898b8;
+    background-color: #d3e1fc;
 }
 .titleContainer {
     display: flex;
@@ -170,6 +173,7 @@ header {
     justify-content: center;
     padding-left: 1rem;
     grid-column: span 2;
+    
 }
 .title {
     font-weight: 500;
