@@ -6,11 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
         dialog.showModal();
     });
 });
+//globals
 const addBookButton = document.getElementById("userInputBtn");
-const userInputHTML = document.getElementById("userInput");
+const searchBar = document.getElementById("userInput");
 const formSubmit = document.getElementById("submit");
+const titleInput = document.getElementById("bookTitle");
 const myLibrary = [];
 
+//send beginning input to dialog
+addBookButton.addEventListener("click", () => {
+    clearForm();
+    titleInput.value = searchBar.value;
+})
+//create objects 
 function Book(title, author, rating, pages, read) {
     this.title = title;
     this.author = author;
@@ -18,6 +26,16 @@ function Book(title, author, rating, pages, read) {
     this.pages = pages;
     this.read = read;
     }
+//clear
+const clearForm = () => {
+    document.getElementById("bookTitle").value = "";
+    document.getElementById("bookAuthor").value = "";
+    document.getElementById("bookRating").value = "";
+    document.getElementById("bookPages").value = "";
+    const radios = document.getElementsByName("yesno");
+    radios[0].checked = true; 
+    radios[1].checked = false;
+};
     
 //get user input
 const userValues = document.getElementById("submitBtn").onclick = () => {
@@ -25,6 +43,19 @@ const userValues = document.getElementById("submitBtn").onclick = () => {
     let author = document.getElementById("bookAuthor").value;
     let rating = document.getElementById("bookRating").value;
     let pages = document.getElementById("bookPages").value;
+
+    if (!isNaN(author) || /\d/.test(author)) {
+        alert("Please enter a name in the author section");
+        return
+    }
+    if (isNaN(rating) || (rating > 5) || (rating < 0)) {
+        alert("Please enter a number between 0 and 5");
+        return
+    }
+    if (!isNaN(pages)) {
+        alert("Please enter a number in the pages section");
+        return
+    }
 
     let read = true;
     const radios = document.getElementsByName("yesno");
@@ -47,8 +78,10 @@ const userValues = document.getElementById("submitBtn").onclick = () => {
     myLibrary.push(userBook);
     console.log(myLibrary);
     addBookToLibrary();
+    searchBar.value = "";
     return myLibrary;
 }
+
 const addBookToLibrary = () => {
     for (let i = myLibrary.length - 1; i < myLibrary.length; i++) {
         const container = document.getElementById("userBooks");
@@ -65,7 +98,7 @@ const addBookToLibrary = () => {
         newAuthor.classList.add("author");
 
         const newRating = document.createElement("div");
-        newRating.textContent = `${myLibrary[i].rating}/ 5`;
+        newRating.textContent = `${myLibrary[i].rating}/5`;
         newRating.classList.add("rating", "userInput")
 
         const newPages = document.createElement("div");
@@ -92,4 +125,5 @@ const addBookToLibrary = () => {
 
 
 
-////Need to add "Read?" functionality. Need to add checks for characters, number length, etc.
+
+//// Need to add checks for characters, number length, etc.
