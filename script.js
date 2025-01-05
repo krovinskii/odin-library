@@ -132,10 +132,10 @@ document.addEventListener('click', function(e) {
     if (e.target.classList.contains('deleteEntry')) {
         const readDiv = e.target.parentElement;
         const titleContainer = readDiv.previousElementSibling.previousElementSibling.previousElementSibling;
-        titleContainer.remove(); 
-        readDiv.previousElementSibling.previousElementSibling.remove(); 
+        titleContainer.remove();  
+        readDiv.previousElementSibling.previousElementSibling.remove();
+        readDiv.previousElementSibling.remove();
         readDiv.remove(); 
-        
         myLibrary.pop();
     }
 });
