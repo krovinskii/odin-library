@@ -87,7 +87,7 @@ const addBookToLibrary = () => {
         const container = document.getElementById("userBooks");
 
         const newTitleContainer = document.createElement("div");
-        newTitleContainer.classList.add("titleContainer", "userInput")
+        newTitleContainer.classList.add("titleContainer", "userInput");
 
         const newTitle = document.createElement("div");
         newTitle.textContent = myLibrary[i].title;
@@ -99,19 +99,28 @@ const addBookToLibrary = () => {
 
         const newRating = document.createElement("div");
         newRating.textContent = `${myLibrary[i].rating}/5`;
-        newRating.classList.add("rating", "userInput")
+        newRating.classList.add("rating", "userInput");
 
         const newPages = document.createElement("div");
         newPages.textContent = myLibrary[i].pages;
-        newPages.classList.add("pages", "userInput")
+        newPages.classList.add("pages", "userInput");
 
         const newRead = document.createElement("div");
         newRead.textContent = myLibrary[i].read;
-        newRead.classList.add("read", "userInput")
+        newRead.classList.add("read", "userInput");
 
         const newDeleteEntry = document.createElement("button");
         newDeleteEntry.textContent = "X";
         newDeleteEntry.classList.add("deleteEntry");
+
+
+        newDeleteEntry.onclick = function() {
+            newTitleContainer.remove();
+            newRating.remove();
+            newPages.remove();
+            newRead.remove();
+            myLibrary.pop();
+        };
 
         container.appendChild(newTitleContainer);
         newTitleContainer.appendChild(newTitle);
@@ -120,22 +129,5 @@ const addBookToLibrary = () => {
         container.appendChild(newPages);
         container.appendChild(newRead);
         newRead.appendChild(newDeleteEntry);
-
-
-
     }
-
 }
-
-//remove entry
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('deleteEntry')) {
-        const readDiv = e.target.parentElement;
-        const titleContainer = readDiv.previousElementSibling.previousElementSibling.previousElementSibling;
-        titleContainer.remove();  
-        readDiv.previousElementSibling.previousElementSibling.remove();
-        readDiv.previousElementSibling.remove();
-        readDiv.remove(); 
-        myLibrary.pop();
-    }
-});
