@@ -52,7 +52,7 @@ const userValues = document.getElementById("submitBtn").onclick = () => {
         alert("Please enter a number between 0 and 5");
         return
     }
-    if (!isNaN(pages)) {
+    if (isNaN(pages)) {
         alert("Please enter a number in the pages section");
         return
     }
@@ -109,12 +109,17 @@ const addBookToLibrary = () => {
         newRead.textContent = myLibrary[i].read;
         newRead.classList.add("read", "userInput")
 
+        const newDeleteEntry = document.createElement("button");
+        newDeleteEntry.textContent = "X";
+        newDeleteEntry.classList.add("deleteEntry");
+
         container.appendChild(newTitleContainer);
         newTitleContainer.appendChild(newTitle);
         newTitleContainer.appendChild(newAuthor);
         container.appendChild(newRating);
         container.appendChild(newPages);
         container.appendChild(newRead);
+        newRead.appendChild(newDeleteEntry);
 
 
 
@@ -122,8 +127,12 @@ const addBookToLibrary = () => {
 
 }
 
-
-
-
-
-//// Need to add checks for characters, number length, etc.
+const deleteEntry = document.getElementById(".deleteEntry");
+deleteEntry.addEventListener("click", () => {
+    newTitleContainer.remove();
+    newTitle.remove();
+    newAuthor.remove();
+    newRating.remove();
+    newPages.remove();
+    newRead.remove();
+})

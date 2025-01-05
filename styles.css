@@ -277,3 +277,15 @@ dialog::backdrop {
     justify-content: center;
     
 }
+
+.deleteEntry {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: clamp(2rem, 8rem, 10rem);
+    margin-right:1rem
+    
+}
