@@ -127,12 +127,15 @@ const addBookToLibrary = () => {
 
 }
 
-const deleteEntry = document.getElementById(".deleteEntry");
-deleteEntry.addEventListener("click", () => {
-    newTitleContainer.remove();
-    newTitle.remove();
-    newAuthor.remove();
-    newRating.remove();
-    newPages.remove();
-    newRead.remove();
-})
+//remove entry
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('deleteEntry')) {
+        const readDiv = e.target.parentElement;
+        const titleContainer = readDiv.previousElementSibling.previousElementSibling.previousElementSibling;
+        titleContainer.remove(); 
+        readDiv.previousElementSibling.previousElementSibling.remove(); 
+        readDiv.remove(); 
+        
+        myLibrary.pop();
+    }
+});
